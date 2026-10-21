@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "io.github.olivoil.weather",
+  "name": "Weather",
+  "version": "0.1.0",
+  "author": "Olivier Melcher",
+  "license": "MIT",
+  "description": "The World Clock weather detail panel on its own. Opens on your home location — the one Elsewhen (omarchy.elsewhen) considers home — and lists every Elsewhen location. Locations, home city, and units are read live from the Elsewhen widget in shell.json; weather comes from Open-Meteo.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Weather",
+    "description": "Detailed weather for your Elsewhen locations, opening on home.",
+    "category": "Info",
+    "allowMultiple": false,
+    "defaultSection": "centerBegin",
+    "defaults": {
+      "refreshMinutes": 15
+    },
+    "schema": [
+      {
+        "key": "refreshMinutes",
+        "type": "integer",
+        "label": "Weather refresh interval (minutes)",
+        "min": 5,
+        "max": 120,
+        "step": 5,
+        "defaultValue": 15,
+        "description": "Network refresh period while the shell is running. Locations, home, and units come from the Elsewhen world clock, not from here."
+      }
+    ]
+  }
+}
